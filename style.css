@@ -1,7 +1,103 @@
-#button {
-    background-color: black ;
-    color:white;
+/* Fundo da página */
+body{
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+
+/* Container centralizado */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    height: 100vh;
+    gap: 10px;
+    border: 2px solid white; 
+    width: 320px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* Inputs de notas */
+input{
+    background-color: #111;
+    color: white;
+    width: 150px;
+    height: 35px;
+    border-radius: 12px;
+    border: 2px solid white;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Botões 3D com brilho */
+#calcular,
+#verificar {
+    background: linear-gradient(145deg, #1E90FF, #63B8FF);
+    color: white;
     width: 200px;
-    height: 36px;
-    border-radius:200px;
+    height: 50px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+
+    /* sombra 3D */
+    box-shadow: 0 5px #104E8B, 0 10px #104E8B, 0 15px #104E8B;
+
+    /* animação de brilho */
+    transition: all 0.2s ease, box-shadow 0.2s ease;
+    animation: glow 2s infinite;
+}
+
+/* Hover: levanta e muda degradê */
+#calcular:hover,
+#verificar:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(145deg, #63B8FF, #1E90FF);
+    box-shadow: 0 8px #104E8B, 0 16px #104E8B, 0 24px #104E8B;
+}
+
+/* Clique: afunda */
+#calcular:active,
+#verificar:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px #104E8B, 0 2px #104E8B, 0 3px #104E8B;
+}
+
+/* Brilho pulsante */
+@keyframes glow {
+    0% {
+        box-shadow: 0 5px #104E8B, 0 10px #104E8B, 0 15px #104E8B, 0 0 10px #63B8FF;
+    }
+    50% {
+        box-shadow: 0 5px #104E8B, 0 10px #104E8B, 0 15px #104E8B, 0 0 20px #63B8FF;
+    }
+    100% {
+        box-shadow: 0 5px #104E8B, 0 10px #104E8B, 0 15px #104E8B, 0 0 10px #63B8FF;
+    }
+}
+
+/* Resultado e status */
+#resultado{
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#status{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Títulos */
+h1, h2{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
