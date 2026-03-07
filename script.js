@@ -1,16 +1,35 @@
 const nota1 = document.getElementById("nota1")
 const nota2 = document.getElementById("nota2")
-const resultado = document.getElementById("resultado")
+const nota3 = document.getElementById("nota3")
+const nota4 = document.getElementById("nota4")
 
-const button = document.getElementById("button")
+const resultado = document.getElementById("resultado")
+const status = document.getElementById("status")
+
+const calcular = document.getElementById("calcular")
+const verificar = document.getElementById("verificar")
+
+let media = 0
 
 function calcularMedia(){
-    const valorNota1 = Number(nota1.value)
-    const valorNota2 = Number(nota2.value)
+    const n1 = Number(nota1.value)
+    const n2 = Number(nota2.value)
+    const n3 = Number(nota3.value)
+    const n4 = Number(nota4.value)
 
-    const media = (valorNota1 + valorNota2) / 2
-
-    resultado.innerText = `A media e ${media}`
+    media = (n1 + n2 + n3 + n4) / 4
+    resultado.innerText = `Média: ${media.toFixed(1)}`
 }
 
-button.addEventListener("click", calcularMedia)
+function verificarResultado(){
+    if(media >= 6){
+        status.innerText = "APROVADO"
+        status.style.color = "lime"
+    } else {
+        status.innerText = "REPROVADO"
+        status.style.color = "red"
+    }
+}
+
+calcular.addEventListener("click", calcularMedia)
+verificar.addEventListener("click", verificarResultado)
